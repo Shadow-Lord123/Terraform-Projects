@@ -7,7 +7,7 @@ provider "aws" {
 # stores the terraform state file in s3
 terraform {
   backend "s3" {
-    bucket = "terraform-bucket321"
+    bucket = "terraformbucket321"
     key    = "terraform.tfstate.dev"
     region = "eu-west-1"
     profile = "terraform-user"

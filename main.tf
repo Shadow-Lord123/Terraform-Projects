@@ -1,15 +1,15 @@
-# configure aws provider
+# Configure AWS provider
 provider "aws" {
-  region = "eu-west-2"
+  region  = "eu-west-2"
   profile = "terraform-user"
 }
 
-# stores the terraform state file in s3
+# Stores the Terraform state file in S3
 terraform {
   backend "s3" {
     bucket = "terraformbucket321"
-    key    = "terraform.tfstate.dev"
-    region = "eu-west-1"
+    key    = "C:/Users/krita/Desktop/Terraform-Projects/terraform.tfstate"
+    region = "eu-west-2"
     profile = "terraform-user"
   }
 }

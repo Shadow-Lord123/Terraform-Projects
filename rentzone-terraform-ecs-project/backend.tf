@@ -5,6 +5,6 @@ terraform {
     key            = "rentzone-ecs/terraform.tfstate"
     region         = "eu-west-2"
     profile        = "terraform-user"
-    dynamodb_table = "terraform-state-lock	"
+    dynamodb_table = "terraform-state-lock"
   }
 }

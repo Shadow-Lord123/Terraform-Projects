@@ -76,38 +76,50 @@ variable "env_file_name" {
   type        = string
 }
 
-variable "architecture" {
-  description = "ecs cpu architecture"
-  type        = string
-}
-
 variable "container_image_uri" {
+  default = "233966445372.dkr.ecr.eu-west-2.amazonaws.com/repository:rentzone"
   description = "container image uri"
   type        = string
 }
 
+#rds variables
+
 variable "database_snapshot_identifier" {
+  default = "arn:aws:rds:eu-west-2:233966445372:snapshot:snapshot-database-1"
   description = "database snapshot name"
   type        = string
 }
 
 variable "database_instance_class" {
-  description = "database instance name"
+  default = "db.t2.micro"
+  description = "the database instance type"
   type        = string
 }
 
 variable "database_instance_identifier" {
-  description = "database instance identifier"
+  default = "database-1"
+  description = "the database instance identifier"
   type        = string
 }
 
 variable "multi_az_deployment" {
+  default = false
   description = "database instance identifier"
-  type        = string
+  type        = bool
 }
 
 variable "ssl_certificate_arn" {
-  default = "arn:aws:acm:eu-west-2:233966445372:certificate/e30eed86-a92f-46a7-b26b-92ea768c5a21"
+  default = "arn:aws:acm:eu-west-2:233966445372:certificate/2de01f00-a65a-4f01-81bb-a94fa51c4a01"
   description = "ssl certificate arn"
+  type        = string
+}
+
+variable "architecture" {
+  description = "ecs cpu architecture"
+  type        = string
+}
+# route 53 variables
+variable "record_name" {
+  description = "sub domain name"
   type        = string
 }

@@ -1,6 +1,6 @@
 # create database subnet group
 resource "aws_db_subnet_group" "database_subnet_group" {
-  name        = "${var.project_name}-${var.environment}-database-subnets"
+  name        ="database-subnets"
   subnet_ids = [
   aws_subnet.private_data_subnet_az1.id,
   aws_subnet.private_data_subnet_az2.id,
@@ -25,7 +25,7 @@ data "aws_db_snapshot" "latest_db_snapshot" {
 resource "aws_db_instance" "database_instance" {
   instance_class         = var.database_instance_class
   skip_final_snapshot    = true
-  availability_zone      = data.aws_availability_zones.available_zones.names[1]
+  availability_zone      = "eu-west-2b"
   identifier             = var.database_instance_identifier
   snapshot_identifier    = data.aws_db_snapshot.latest_db_snapshot.id
   db_subnet_group_name   = aws_db_subnet_group.database_subnet_group.name

@@ -21,7 +21,7 @@ variable "vpc_cidr" {
 
 variable "public_subnet_az1_cidr" {
   description = "public subnet az1 cidr block"
-  type        = string 
+ type        = string 
 }
 
 variable "public_subnet_az2_cidr" {
@@ -85,19 +85,16 @@ variable "container_image_uri" {
 #rds variables
 
 variable "database_snapshot_identifier" {
-  default = "arn:aws:rds:eu-west-2:233966445372:snapshot:snapshot-database-1"
   description = "database snapshot name"
   type        = string
 }
 
 variable "database_instance_class" {
-  default = "db.t2.micro"
   description = "the database instance type"
   type        = string
 }
 
 variable "database_instance_identifier" {
-  default = "database-1"
   description = "the database instance identifier"
   type        = string
 }
@@ -109,7 +106,7 @@ variable "multi_az_deployment" {
 }
 
 variable "ssl_certificate_arn" {
-  default = "arn:aws:acm:eu-west-2:233966445372:certificate/2de01f00-a65a-4f01-81bb-a94fa51c4a01"
+  default = "arn:aws:acm:eu-west-2:233966445372:certificate/8e81786c-5f7e-458d-a034-af83681e2e7e"
   description = "ssl certificate arn"
   type        = string
 }
